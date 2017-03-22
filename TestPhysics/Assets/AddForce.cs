@@ -2,11 +2,14 @@
 
 public class AddForce : MonoBehaviour {
 
+
+    public GameObject ball;
+    public int forceApllied;
     void OnMouseDown()
     {
 
-        GetComponent<Rigidbody>().AddForce(-transform.forward * 5000, ForceMode.Acceleration);
-        GetComponent<Rigidbody>().useGravity = true;
+        ball.GetComponent<Rigidbody>().AddForce(-ball.transform.forward * forceApllied, ForceMode.Acceleration);
+        ball.GetComponent<Rigidbody>().useGravity = true;
     }
 
 }
