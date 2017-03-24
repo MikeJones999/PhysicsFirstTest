@@ -30,3 +30,4 @@ sysinfo.txt
 *.unitypackage
 TestPhysics/Library/metadata/
 TestPhysics/Library/
+TestPhysics/Temp/

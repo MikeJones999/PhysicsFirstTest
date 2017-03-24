@@ -23,18 +23,23 @@ public class BallController : MonoBehaviour {
 
         if (isMouseDown)
         {
-            mouseOffset = (Input.mousePosition - mouseReference);
+            //mouseOffset = (Input.mousePosition - mouseReference);
 
-            rotation.y = (mouseOffset.x) * sensitivity;
-            //rotation.y = Mathf.Clamp((mouseOffset.x), -45, -130) * sensitivity;
+            //rotation.y = (mouseOffset.x) * sensitivity;
+            ////rotation.y = Mathf.Clamp((mouseOffset.x), -45, -130) * sensitivity;
 
-            //rotation.y = Mathf.Clamp(rotation.y, -45, 45);
+            //rotation.y = Mathf.Clamp(rotation.y, -45.0f, 130.0f);
 
-      
-            transform.Rotate(rotation);
 
-            mouseReference = Input.mousePosition;
+            //// transform.Rotate(rotation);
+            //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, -rotation.y, transform.localEulerAngles.z);
 
+            //mouseReference = Input.mousePosition;
+
+            rotation.y += Input.GetAxis("Mouse X") * sensitivity;
+
+            rotation.y = Mathf.Clamp(rotation.y, 45.0f, 130.0f);
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotation.y, transform.localEulerAngles.z);
         }
 	}
 
@@ -45,11 +50,13 @@ public class BallController : MonoBehaviour {
         isMouseDown = true;
 
         //store mouse position
-        mouseReference = Input.mousePosition;
+        //mouseReference = Input.mousePosition;
     } 
 
     void OnMouseUp()
     {
         isMouseDown = false;
     }
+
+    
 }
