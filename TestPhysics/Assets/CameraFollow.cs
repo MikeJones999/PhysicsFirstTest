@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-    public Camera mainCam;
+    private Camera mainCam;
     public int offset;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        mainCam = Camera.main;
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour {
     public float sensitivity;
     private Vector3 mouseReference;
     private Vector3 mouseOffset ;
-    private Vector3 rotation;
+    
     private bool isMouseDown;
     float rotateY;
 
@@ -15,7 +15,7 @@ public class BallController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         isMouseDown = false;
-        rotation = Vector3.zero;
+       
         
 
     }
