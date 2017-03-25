@@ -10,6 +10,9 @@ public class AddForce : MonoBehaviour {
 
         ball.GetComponent<Rigidbody>().AddForce(-ball.transform.forward * forceApllied, ForceMode.Acceleration);
         ball.GetComponent<Rigidbody>().useGravity = true;
+        Component[] components = ball.GetComponentsInChildren<Component>(true);
+        //Destroy(arrow);
+
     }
 
 }

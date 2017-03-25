@@ -9,13 +9,16 @@ public class BallController : MonoBehaviour {
     private Vector3 mouseOffset ;
     private Vector3 rotation;
     private bool isMouseDown;
+    float rotateY;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         isMouseDown = false;
         rotation = Vector3.zero;
-	}
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,11 +38,16 @@ public class BallController : MonoBehaviour {
             //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, -rotation.y, transform.localEulerAngles.z);
 
             //mouseReference = Input.mousePosition;
+            rotateY += Input.GetAxis("Mouse X") * sensitivity;
+            //rotation.y += Input.GetAxis("Mouse X") * sensitivity;
 
-            rotation.y += Input.GetAxis("Mouse X") * sensitivity;
-
-            rotation.y = Mathf.Clamp(rotation.y, 45.0f, 130.0f);
-            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotation.y, transform.localEulerAngles.z);
+            //Used to set the ball forward on first click
+            if (rotateY == 0.0f)
+            {
+                rotateY = 90;
+            }
+            rotateY = Mathf.Clamp(rotateY, 45.0f, 130.0f);
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotateY, transform.localEulerAngles.z);
         }
 	}
 
