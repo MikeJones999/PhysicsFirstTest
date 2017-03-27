@@ -10,7 +10,10 @@ public class ProjectileManager : MonoBehaviour {
 
     public GameObject ProjectilePrefab;
     public GameObject SpawnProjectile;
+    public GameObject ProjectileLob;
+    public GameObject SpawnProjectileLob;
     private GameObject projectile;
+    private GameObject projectileLob;
 
     private void Awake()
     {
@@ -37,11 +40,19 @@ public class ProjectileManager : MonoBehaviour {
     {
         projectile = Instantiate(ProjectilePrefab, SpawnProjectile.transform.position, Quaternion.identity);
         projectile.transform.Rotate(new Vector3(0, 90, 0));
+
+        projectileLob = Instantiate(ProjectileLob, SpawnProjectileLob.transform.position, Quaternion.identity);
+        projectileLob.transform.Rotate(new Vector3(0, 90, 0));
     }
 
     public GameObject GetProjectile()
     {
         return projectile;
+    }
+
+    public GameObject GetProjectileLob()
+    {
+        return projectileLob;
     }
 
 }
