@@ -27,6 +27,7 @@ public class AddForceAndHeight : MonoBehaviour {
             var temp = ball.transform.GetChild(0);
             //temp.gameObject
             Destroy(temp.gameObject);
+            Destroy(ball.gameObject, 4.0f);
             fired = true;
         }
     }
