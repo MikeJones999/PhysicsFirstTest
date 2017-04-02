@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -75,13 +77,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AddForce.cs" />
-    <Compile Include="Assets\AddForceAndHeight.cs" />
-    <Compile Include="Assets\BallController.cs" />
-    <Compile Include="Assets\BallControllerLob.cs" />
-    <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\ProjectileManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingManager.cs" />
+    <Compile Include="Assets\Scripts\AddForce.cs" />
+    <Compile Include="Assets\Scripts\AddForceAndHeight.cs" />
+    <Compile Include="Assets\Scripts\BallController.cs" />
+    <Compile Include="Assets\Scripts\BallControllerLob.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\ProjectileManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

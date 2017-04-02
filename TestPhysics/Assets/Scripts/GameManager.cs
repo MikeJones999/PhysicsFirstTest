@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 
 
         ProjectileManager.instance.StartGame();
+        BuildingManager.instance.StartBuilding();
 
 
 	}
@@ -31,4 +32,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
+     
 }
