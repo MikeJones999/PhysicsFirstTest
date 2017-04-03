@@ -7,6 +7,9 @@ public class AddForce : MonoBehaviour {
    // public GameObject pointer;
 
     public int forceApllied;
+
+
+    public GameObject Catapult;
     void OnMouseDown()
     {
 
@@ -19,6 +22,11 @@ public class AddForce : MonoBehaviour {
         var temp = ball.transform.GetChild(0);
         //temp.gameObject
         Destroy(temp.gameObject);
+
+
+
+        //catapult
+        Catapult.GetComponent<Animator>().Play("FireShot");
     }
 
 }

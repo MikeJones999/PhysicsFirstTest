@@ -10,10 +10,16 @@ public class AddForceAndHeight : MonoBehaviour {
     public int forceApllied;
     public bool fired;
 
+
+    public GameObject Catapult;
+
     private void Start()
     {
         fired = false;
     }
+    /// <summary>
+    /// 
+    /// </summary>
     void OnMouseDown()
     {
         if (!fired)
@@ -28,6 +34,11 @@ public class AddForceAndHeight : MonoBehaviour {
             //temp.gameObject
             Destroy(temp.gameObject);
             fired = true;
+
+
+            //catapult
+            Catapult.GetComponent<Animator>().Play("FireShot");
+
         }
     }
 }

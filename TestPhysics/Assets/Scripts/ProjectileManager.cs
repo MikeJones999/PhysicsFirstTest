@@ -43,6 +43,7 @@ public class ProjectileManager : MonoBehaviour {
 
         projectileLob = Instantiate(ProjectileLob, SpawnProjectileLob.transform.position, Quaternion.identity);
         projectileLob.transform.Rotate(new Vector3(0, 90, 0));
+        //need to attach ball to arm
     }
 
     public GameObject GetProjectile()
